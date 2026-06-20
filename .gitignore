@@ -5,3 +5,5 @@ __pycache__/*
 sets_full.json
 tune_id_url_abc.json
 data/*
+logs/*
+results/*  
