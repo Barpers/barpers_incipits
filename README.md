@@ -15,4 +15,4 @@ Ordered by set date/name ASC/DESC
 
 Set name links back to thesession.org
 
-<a href="data/barpers_session_sets.html">full sets</a>
+<a href="data/barpers_session_sets.html">barpers session sets</a>
