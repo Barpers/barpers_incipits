@@ -488,12 +488,12 @@ HTML = f'''<!DOCTYPE html>
 </style>
 </head>
 <body>
-<a onclick="this.href='data:text/html;charset=UTF-8,' + encodeURIComponent(document.documentElement.outerHTML)" 
-   href="#" 
-   download="barpers_sets_incipits.html">
-   Download
-</a>
 <header>
+<button type="button"onclick="download('https://barpers.github.io/thesession.org_member_sets_incipits/data/barpers_session_sets.html', 'barpers_session_sets.html')" >
+	<img src="../images/download-icon-image.jpg"
+     	 alt="Button Image" style="width: 20px; height: 20px;">
+</button>
+
   <h1><a href="https://thesession.org/members/179479/sets" target="_blank">Barpers Sets</a> <span>thesession.org</span></h1>
 </header>
 
@@ -688,6 +688,19 @@ function highlight(text, query) {{
   frag.appendChild(mark);
   frag.appendChild(document.createTextNode(text.slice(idx + query.length)));
   return frag;
+}}
+
+// Source - https://stackoverflow.com/a/76101203
+// Posted by enisn
+// Retrieved 2026-06-22, License - CC BY-SA 4.0
+
+async function download(dataurl, fileName) {{
+    const response = await fetch(dataurl);
+    const blob = await response.blob();
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
 }}
 
 function render() {{
